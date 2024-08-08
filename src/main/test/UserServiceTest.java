@@ -1,4 +1,5 @@
 
+import dao.impl.UserDaoJDBCImpl;
 import model.User;
 import service.UserService;
 import service.impl.UserServiceImpl;
@@ -10,11 +11,12 @@ import org.junit.Test;
 import java.util.List;
 
 public class UserServiceTest {
-    private final UserService userService = new UserServiceImpl();
+    private final UserDaoJDBCImpl userDao = new UserDaoJDBCImpl();
+    private final UserService userService = new UserServiceImpl(userDao);
 
     private final String testName = "Jim";
     private final String testLastName = "Yosef";
-    private final byte testAge = 5;
+    private final byte testAge = 45;
 
 
     @Test

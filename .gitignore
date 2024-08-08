@@ -1,1 +1,65 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Build directories
+/target/
+/bin/
+/build/
+
+# Compiled Java classes
+*.class
+
+# IDE settings
 .idea/
+*.iml
+*.iws
+
+# Maven directories
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# Gradle directories
+.gradle/
+build/
+gradle/
+
+# Local configuration files
+*.properties
+*.yml
+*.yaml
+*.env
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Build artifacts
+*.jar
+*.war
+*.ear
+
+# Local IDE files
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Testing files
+*.coverage
+*.lcov
+*.test
+
+# Log files
+*.log
+
+# System temporary files
+*.swp
+*.swo
+*.swn
+
+# Environment configuration files
+.env.*
