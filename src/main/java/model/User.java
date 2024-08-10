@@ -1,24 +1,27 @@
 package model;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Column;
+import javax.persistence.*;
 
-@Table
+
+@Entity
+@Table(name = "users")
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column
+    @Column(name = "age")
     private Byte age;
 
+    public User(){
+    }
 
     public User(String name, String lastName, Byte age){
         this.name = name;

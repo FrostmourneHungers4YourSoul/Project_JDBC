@@ -1,29 +1,28 @@
-import dao.UserDao;
-import dao.impl.UserDaoJDBCImpl;
+import dao.impl.UserDaoHibernateImpl;
 import model.User;
-import service.UserService;
 import service.impl.UserServiceImpl;
+
 
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("Project JDBC started...");
-        System.out.println("Home work 1");
+        System.out.println("Home work 2");
 
-        UserDao userDao = new UserDaoJDBCImpl();
-        UserService service = new UserServiceImpl((UserDaoJDBCImpl) userDao);
+        UserDaoHibernateImpl dao = new UserDaoHibernateImpl();
+        UserServiceImpl service = new UserServiceImpl(dao);
 
         service.createUsersTable();
-        service.saveUser("Alex", "Pereira", (byte) 37);
-        service.saveUser("Jiri", "Prochazka", (byte) 31);
-        service.saveUser("Dustin", "Poirier", (byte) 35);
-        service.saveUser("Conor", "McGregor", (byte) 36);
+
+        service.saveUser("Alice", "Wonderland", (byte) 28);
+        service.saveUser("Christofer", "Nolan", (byte) 32);
+        service.saveUser("Vladimir", "Putin", (byte) 24);
+        service.saveUser("Donald", "Tramp",(byte) 29);
 
         for (User user : service.getAllUsers())
-            System.out.println(user.toString());
+            System.out.println(user);
 
         service.cleanUsersTable();
         service.dropUsersTable();
-
     }
 }
