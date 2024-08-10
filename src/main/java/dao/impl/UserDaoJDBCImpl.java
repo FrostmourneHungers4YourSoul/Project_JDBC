@@ -3,7 +3,7 @@ package dao.impl;
 import dao.UserDao;
 import exception.DatabaseConnectionException;
 import model.User;
-import utile.ConnectionManager;
+import util.ConnectionManager;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -82,8 +82,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void removeUserById(long id) {
         String query = """
             DELETE FROM users.public.users
-            WHERE id = ?;
-                """;
+            WHERE id = ?;""";
         try(var connection = ConnectionManager.open();
             var statement = connection.prepareStatement(query)){
             statement.setLong(1, id);
